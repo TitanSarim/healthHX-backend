@@ -1,0 +1,45 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+// Looking for ways to speed up your queries, or scale easily with your serverless or edge functions?
+// Try Prisma Accelerate: https://pris.ly/cli/accelerate-init
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+
+model MedicineUSA {
+  PRODUCTID String @id
+  PRODUCTNDC String? @default("")
+  PRODUCTTYPENAME String? @default("")
+  PROPRIETARYNAME String
+  PROPRIETARYNAMESUFFIX String? @default("")
+  NONPROPRIETARYNAME String? @default("")
+  DOSAGEFORMNAME String? @default("")
+  ROUTENAME String? @default("")
+  STARTMARKETINGDATE String? @default("")
+  ENDMARKETINGDATE String? @default("")
+  MARKETINGCATEGORYNAME String? @default("")
+  APPLICATIONNUMBER String? @default("")
+  LABELERNAME String? @default("")
+  SUBSTANCENAME String? @default("")
+  ACTIVE_NUMERATOR_STRENGTH String? @default("")
+  ACTIVE_INGRED_UNIT String? @default("")
+  PHARM_CLASSES String? @default("")
+  DEASCHEDULE String? @default("")
+  AIMODELCHAT String?
+  region Region @default(USA)
+}
+
+
+enum Region {
+  USA
+  AUS
+  PAK
+}
