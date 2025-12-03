@@ -18,7 +18,7 @@ export class AppService {
   async getHealth(): Promise<HealthStatus> {
     const health: HealthStatus = {
       status: 'ok',
-      service: 'Micro-SaaS Backend',
+      service: 'HealthHX Backend',
       timestamp: new Date().toISOString(),
       database: {
         status: 'disconnected',
